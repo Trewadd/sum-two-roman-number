@@ -7,12 +7,12 @@ roman_numbers = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
 def to_roman(number):
     output = ''
     for i in arabic_numbers:
-        d = number % i
-        c = number // i
-        if c >= 1:
-            output += roman_numbers[arabic_numbers.index(i)] * c
-            number = d
-        numb = str(d)
+        remainder = number % i
+        whole = number // i
+        if whole >= 1:
+            output += roman_numbers[arabic_numbers.index(i)] * whole
+            number = remainder
+        numb = str(remainder)
         if numb[0] in shift_roman:
             output += shift_roman[numb[0]][len(numb) - 1]
             if len(numb) == 1:
